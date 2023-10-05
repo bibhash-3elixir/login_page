@@ -1,9 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import SignIn from "./signIn";
+// import SignIn from "./signIn";
 import SignUp from "./signUp";
 import Home from "./Dashboard";
+import GmailLogin from "./signIn";
+import GmailLoginPassword from "./signInPassword";
+
 
 
 function App() {
@@ -12,7 +15,8 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signin" element={<GmailLogin/>} />
+          <Route path="/pass" element={<GmailLoginPassword/>}/>
           <Route path="/signup" element={<SignUp />} />
         </Routes> 
       </div>

@@ -15,6 +15,9 @@ function Home() {
             <li>
               <Link to="/signup">Sign Up</Link>
             </li>
+            <li>
+              <Link to="/pass">passwordpage</Link>
+            </li>
           </ul>
         </nav>
   </div>);

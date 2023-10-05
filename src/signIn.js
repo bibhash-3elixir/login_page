@@ -1,122 +1,132 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import React from 'react';
+import './style.css'
+import { Container, Paper, TextField, Button, Typography, Link, Grid, Box } from '@mui/material';
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="/">
-        Your LogIn Page
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+const languageOptions = [
+  { label: 'English (United States)' },
+  { label: 'Spanish' },
+  { label: 'French' },
+  { label: 'German' },
+];
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
-
-export default function SignIn() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+const GmailLogin = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+    <div className='centered-content'>
+    <Container maxWidth="xs" component="main">
+      <Paper elevation={3} style={{ padding: '20px', textAlign: 'center',width:"100%" }}>
+        <img
+          src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png"
+          alt="Gmail Logo"
+          style={{ width: '92px', height: '32px', marginBottom: '16px' }}
+          />
+        <Typography variant="h5" component="h2">
+          Sign in
+        </Typography>
+        <Typography variant="body2" color="Secondary" style={{ marginTop: '20px' }}>
+          to Continue to Gmail
+        </Typography>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 5,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
           >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
+        <form onSubmit={handleSubmit}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="email"
+            label="Email or phone"
+            name="email"
+            autoComplete="email"
+            autoFocus
+            color='primary'
+          />
+          <Grid item xs={12} style={{ textAlign: 'left' }}>
+              <Typography variant="body2" color="Secondary">
+                <Link href="#" color="primary">
+                  Forgot email?
                 </Link>
-              </Grid>
-              <Grid item>
-                <Link href="/signup" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+              </Typography>
+          </Grid>
+          <Grid item xs={12} style={{ textAlign: 'left',marginTop:'40px' }}>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              style={{ marginTop: '20px' ,justifyContent: "flex-start" }}
+              >
+              Not your computer? Use{' '}
+              <Link href="#" color="textSecondary">
+                Guest mode
+              </Link>{' '}
+              to sign in privately.{' '}
+              <Link href="#" color="primary">
+                Learn more
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid container xs={12} style={{ marginTop: '40px', textAlign: 'left' ,marginBottom:'60px'}}>
+           <Grid item xs={6}>
+              <Button type='submit' variant='text' style={{ textTransform: 'none' }}>
+                Create account
+              </Button>
+           </Grid>
+            <Grid item xs={6} style={{ textAlign: 'right' }}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+              >
+                Next
+              </Button>
             </Grid>
-          </Box>
-        </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
-    </ThemeProvider>
+          </Grid>
+        </form>
+      </Box>
+      </Paper>
+      <Grid container style={{ marginTop: '10px', justifyContent:'space-between' }}>
+        <Grid item xs={12}>
+          <Grid container justifyContent="flex-start" spacing={2}>
+            <Grid item>
+              <Typography variant="body2" color="textSecondary">
+                English (United States)
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body2" color="textSecondary">
+                <Link href="#" color="textSecondary">
+                  Help
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body2" color="textSecondary">
+                <Link href="#" color="textSecondary">
+                  Privacy
+                </Link>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body2" color="textSecondary">
+                <Link href="#" color="textSecondary">
+                  Terms
+                </Link>
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+            </div>
   );
-}
+};
+
+export default GmailLogin;
