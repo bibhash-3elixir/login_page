@@ -18,20 +18,20 @@ const GmailLoginPassword = () => {
           <img
             src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png"
             alt="Gmail Logo"
-            style={{ width: '92px', height: '32px', marginBottom: '16px' }}
+            style={{ width: '92px', height: '32px', marginBottom: '12px',marginTop:'20px' }}
           />
           <Typography variant="h5" component="h2">
             Welcome
           </Typography>
-          <Typography variant="body2" color="textSecondary" style={{ marginTop: '10px' }}>
+          <Typography variant="body2" color="textPrimary" style={{ marginTop: '10px' }}>
             bibhash88lenka@gmail.com
           </Typography>
           <Box
             sx={{
-                marginTop: 5,
+                marginTop: 4,
                 display: "flex",
                 flexDirection: "column",
-                alignItems: "flex-start", // Align items to the left
+                alignItems: "flex-start",
             }}
             >
             <TextField
@@ -44,18 +44,19 @@ const GmailLoginPassword = () => {
                 name="password"
                 type="password"
                 autoComplete="current-password"
+                color='primary'
             />
-                <FormControlLabel
+            <FormControlLabel
                     control={<Checkbox />}
                     label="Show password"
-                />
+            />
             <Grid container xs={12} style={{ marginTop: '50px', textAlign: 'left' ,marginBottom:'60px'}}>
-                <Grid item xs={6}>
+              <Grid item xs={6}>
                 <Button type='submit' variant='text' style={{ textTransform: 'none' }}>
                     Try another way
                 </Button>
-                </Grid>
-                <Grid item xs={6} style={{ textAlign: 'right' }}>
+              </Grid>
+              <Grid item xs={6} style={{ textAlign: 'right' }}>
                 <Button
                     type="submit"
                     variant="contained"
@@ -63,39 +64,33 @@ const GmailLoginPassword = () => {
                 >
                     Next
                 </Button>
-                </Grid>
+              </Grid>
             </Grid>
         </Box>
         </Paper>
-        <Grid container style={{ marginTop: '10px', justifyContent: 'space-between' }}>
-          <Grid item xs={12}>
-            <Grid container justifyContent="flex-start" spacing={2}>
-              <Grid item>
-                <Typography variant="body2" color="textSecondary">
-                  English (United States)
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="textSecondary">
-                  <Link href="#" color="textSecondary">
-                    Help
-                  </Link>
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="textSecondary">
-                  <Link href="#" color="textSecondary">
-                    Privacy
-                  </Link>
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2" color="textSecondary">
-                  <Link href="#" color="textSecondary">
-                    Terms
-                  </Link>
-                </Typography>
-              </Grid>
+        <Grid container xs={12} style={{ marginTop: '15px',justifyContent:"space-between" }}>
+          <Grid xs={6} style={{textAlign:'left'}} spacing={2}>
+            <Grid item style={{textAlign:'left'}}>
+              <Typography variant="body2" color="textPrimary">
+                English (United States)
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid xs={6} container  style={{textAlign:'right'}} spacing={2}>
+            <Grid item  style={{textAlign:'right'}}>
+              <Typography variant="body2" color="textPrimary">
+                  Help
+              </Typography>
+            </Grid>
+            <Grid item  style={{textAlign:'right'}}>
+              <Typography variant="body2" color="textPrimary">
+                  Privacy
+              </Typography>
+            </Grid>
+            <Grid item  style={{textAlign:'right'}}>
+              <Typography variant="body2" color="textPrimary">
+                  Terms
+              </Typography>
             </Grid>
           </Grid>
         </Grid>

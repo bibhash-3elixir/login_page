@@ -22,17 +22,17 @@ const GmailLogin = () => {
         <img
           src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png"
           alt="Gmail Logo"
-          style={{ width: '92px', height: '32px', marginBottom: '16px' }}
+          style={{ width: '92px', height: '32px', marginBottom: '12px',marginTop:'20px' }}
           />
         <Typography variant="h5" component="h2">
           Sign in
         </Typography>
-        <Typography variant="body2" color="Secondary" style={{ marginTop: '20px' }}>
+        <Typography variant="body2" color="Secondary" style={{ marginTop: '10px' }}>
           to Continue to Gmail
         </Typography>
         <Box
           sx={{
-            marginTop: 5,
+            marginTop: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -48,7 +48,7 @@ const GmailLogin = () => {
             name="email"
             autoComplete="email"
             autoFocus
-            color='primary'
+            color="primary"
           />
           <Grid item xs={12} style={{ textAlign: 'left' }}>
               <Typography variant="body2" color="Secondary">
@@ -60,14 +60,11 @@ const GmailLogin = () => {
           <Grid item xs={12} style={{ textAlign: 'left',marginTop:'40px' }}>
             <Typography
               variant="body2"
-              color="textSecondary"
+              color="textPrimary"
               style={{ marginTop: '20px' ,justifyContent: "flex-start" }}
               >
               Not your computer? Use{' '}
-              <Link href="#" color="textSecondary">
-                Guest mode
-              </Link>{' '}
-              to sign in privately.{' '}
+              Guest mode to sign in privately.{' '}
               <Link href="#" color="primary">
                 Learn more
               </Link>
@@ -92,40 +89,34 @@ const GmailLogin = () => {
         </form>
       </Box>
       </Paper>
-      <Grid container style={{ marginTop: '10px', justifyContent:'space-between' }}>
-        <Grid item xs={12}>
-          <Grid container justifyContent="flex-start" spacing={2}>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
+      <Grid container xs={12} style={{ marginTop: '15px',justifyContent:"space-between" }}>
+          <Grid xs={6} style={{textAlign:'left'}} spacing={2}>
+            <Grid item style={{textAlign:'left'}}>
+              <Typography variant="body2" color="textPrimary">
                 English (United States)
               </Typography>
             </Grid>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                <Link href="#" color="textSecondary">
+          </Grid>
+          <Grid xs={6} container  style={{textAlign:'right'}} spacing={2}>
+            <Grid item  style={{textAlign:'right'}}>
+              <Typography variant="body2" color="textPrimary">
                   Help
-                </Link>
               </Typography>
             </Grid>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                <Link href="#" color="textSecondary">
+            <Grid item  style={{textAlign:'right'}}>
+              <Typography variant="body2" color="textPrimary">
                   Privacy
-                </Link>
               </Typography>
             </Grid>
-            <Grid item>
-              <Typography variant="body2" color="textSecondary">
-                <Link href="#" color="textSecondary">
+            <Grid item  style={{textAlign:'right'}}>
+              <Typography variant="body2" color="textPrimary">
                   Terms
-                </Link>
               </Typography>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
-            </div>
+    </Container>  
+  </div>
   );
 };
 
